@@ -3,9 +3,15 @@ public class Node {
 	public Node(int p_value) {
 		value=p_value;
 	}
-	int value;
-	Node nextNode;
+	private int value;
+	public Node nextNode;
 	
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int p_value) {
+		value=p_value;
+	}
 	public int getSize(int count) {
 		if (nextNode!=null) {
 			count=nextNode.getSize(count);
@@ -13,8 +19,7 @@ public class Node {
 		return count+1;
 	}
 	
-	public Node insertSorted(int n) {
-		
+	public Node insertSorted(int n) {	
 		if (n>value) {
 			if(nextNode!=null) {
 				Node newNode= nextNode.insertSorted(n);
